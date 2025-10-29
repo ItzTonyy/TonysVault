@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Powerschool Login</title>
+  <style>
+    :root { --bg: darkslategray; --accent: #2563eb; --text: #e6eef8; }
+    html,body {
+      height:100%; margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:var(--bg); color:var(--text);
+    }
+    header { padding:16px 20px; font-size:1.05rem; background:rgba(0,0,0,0.12); }
+    main { padding:20px; }
+    .game-btn {
+      padding:10px 14px; border-radius:8px; border:0;
+      background:var(--accent); color:white; font-weight:600;
+      cursor:pointer; margin-right:8px;
+    }
+    .game-btn:active { transform:translateY(1px); }
+    .hint {
+      display:none;
+      position:fixed;
+      left:12px;
+      top:12px;
+      z-index:9999;
+      background:rgba(0,0,0,0.75);
+      color:#fff;
+      padding:10px;
+      border-radius:8px;
+      font-family:system-ui,Arial;
+    }
+    .hint button {
+      margin-left:8px;
+      padding:6px 10px;
+      border-radius:6px;
+      border:0;
+      background:#2563eb;
+      color:#fff;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Tony's Vault</h1>
+  </header>
+
+  <main>
+    <h2>very educational lessons below 🤫</h2>
+    <h2>Press P to go to gmail and hide your "lesson"</h2>
+    <h4>If you want me to add something or something is broken email me at itzjustantek@gmail.com</h4>
+    <iframe src="https://gointerstellar.app" style="width:100%;height:800px;border:0"></iframe>
+
+
+    <button id="openBtn" class="game-btn">1v1.lol</button>
+    <button id="goalkickgame" class="game-btn">Free Kick Classic</button>
+    <button id="infinitecraft" class="game-btn">Infinite Craft</button>
+
+
+    <h6>Why Social Studies Is Important
+Social studies is one of the most important subjects taught in schools because it helps students understand the world they live in. It connects history, geography, economics, civics, and culture to teach people how societies function and how individuals can make a difference. Through social studies, students gain the knowledge and skills necessary to become informed, responsible, and active citizens.
+One major reason social studies is important is that it teaches us about the past. By learning history, students discover how societies have developed over time, what mistakes were made, and how they can be avoided in the future. Understanding historical events such as wars, revolutions, and social movements helps people see how change happens and how individuals and groups have shaped the world. History also gives students a sense of identity by connecting them to their heritage and traditions.
+Another important part of social studies is learning about geography. Geography helps us understand the relationship between people and the environment, including how natural resources, climate, and location influence human life. It also promotes global awareness—students learn about different countries, cultures, and perspectives. This understanding encourages empathy and respect for diversity, which are essential in todays interconnected world.
+Civics and government education, another part of social studies, teaches students how their political systems work. By studying laws, rights, and responsibilities, students become better prepared to participate in democracy. They learn how voting, civic engagement, and community service contribute to a healthy society. When young people understand how their government functions, they are more likely to be active and informed citizens who can make positive changes.
+Social studies also develops critical thinking and problem-solving skills. Students learn to analyze information, evaluate different viewpoints, and make evidence-based conclusions. These skills are valuable not only in school but also in real life—helping people understand current events, solve social problems, and make thoughtful decisions about their future.
+In conclusion, social studies is vital because it helps students understand the worlds past, present, and future. It teaches about history, geography, government, culture, and economics—all of which are necessary to build responsible, thoughtful, and informed citizens. Without social studies, people would lack the knowledge and perspective needed to work together and create a better world.
+</h6>
+  </main>
+
+  <script>
+  // ==== Panic Button Config ====
+  const PANIC_KEY = 'p'; // key to press
+  const PANIC_URL = 'google.com'; // redirect destination
+
+  // Listen globally for the panic key
+  document.addEventListener('keydown', e => {
+    if (e.key.toLowerCase() === PANIC_KEY) {
+      window.location.href = PANIC_URL;
+    }
+  });
+
+  // Helper: opens an about:blank page and injects the game + panic handler
+  function openInAboutBlank(targetUrl) {
+    var win = window.open('about:blank', '_blank');
+    if (!win) {
+      alert('Popup blocked — allow popups for this site to open the game.');
+      return;
+    }
+
+    var injected =
+      '<!doctype html>' +
+      '<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
+      '<title>Powerschool login</title>' +
+      '<style>' +
+        'html,body{height:100%;margin:0;background:#000;color:#fff;font-family:system-ui,Arial}' +
+        'iframe{width:100vw;height:100vh;border:0;display:block}' +
+        '.hint{display:none;position:fixed;left:12px;top:12px;z-index:9999;background:rgba(0,0,0,0.75);color:#fff;padding:10px;border-radius:8px}' +
+        '.hint button{margin-left:8px;padding:6px 10px;border-radius:6px;border:0;background:#2563eb;color:#fff;cursor:pointer}' +
+      '</style>' +
+      '</head><body>' +
+      '<div class="hint" id="hint">It looks like the game is reloading. If it remains blank, <button id="openDirect">open it directly</button></div>' +
+      '<iframe id="gameFrame" src="' + targetUrl + '" allow="fullscreen; autoplay" allowfullscreen></iframe>' +
+      '<script>' +
+        // Panic handler inside about:blank page too
+        '(function(){' +
+          'document.addEventListener("keydown", function(e){' +
+            'if(e.key.toLowerCase()==="' + PANIC_KEY + '"){' +
+              'window.location.href="' + PANIC_URL + '";' +
+            '}' +
+          '});' +
+
+          'var iframe = document.getElementById("gameFrame");' +
+          'var loads = 0; var start = Date.now();' +
+          'iframe.addEventListener("load", function(){' +
+            'var now = Date.now();' +
+            'if (now - start > 8000) { start = now; loads = 0; }' +
+            'loads++;' +
+            'if (loads >= 3) { try { document.getElementById("hint").style.display = "block"; } catch(e){} }' +
+          '});' +
+          'document.getElementById("openDirect").addEventListener("click", function(){ window.open("' + targetUrl + '", "_blank"); });' +
+        '})();' +
+      '<\/script>' +
+      '</body></html>';
+
+    try {
+      win.document.open();
+      win.document.write(injected);
+      win.document.close();
+    } catch (e) {
+      try { win.location.href = targetUrl; } catch (e2) { window.open(targetUrl, '_blank'); }
+    }
+  }
+
+  // Buttons
+  document.getElementById('openBtn').addEventListener('click', () => {
+    openInAboutBlank('https://1v1.lol');
+  });
+  document.getElementById('goalkickgame').addEventListener('click', () => {
+    openInAboutBlank('https://games.cdn.famobi.com/html5games/0/3d-free-kick/16498237/?fg_domain=play.famobi.com');
+  });
+  document.getElementById('infinitecraft').addEventListener('click', () => {
+    openInAboutBlank('https://kbhgames.com/game/infinite-craft');
+  });
+  </script>
+</body>
+</html>
