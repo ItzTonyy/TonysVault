@@ -45,34 +45,44 @@
 <body>
   <header>
     <h1>Welcome to Tony's Vault</h1>
+        <h2>very educational lessons below 🤫</h2>
+    <h3>Press P to go to gmail and hide your "lesson"</h3>
+    <h5>If you want me to add something or something is broken email me at itzjustantek@gmail.com</h5>
   </header>
 
   <main>
-    <h2>very educational lessons below 🤫</h2>
-    <h2>Press P to go to gmail and hide your "lesson"</h2>
-    <h4>If you want me to add something or something is broken email me at itzjustantek@gmail.com</h4>
+
+<h2>Games and apps</h2>
+    <button style="width: 400px;height: 200px; color: white; background-color: black; font-size: 70px;" id="openBtn" class="game-btn">1v1.lol</button>
+    <button style="width: 400px;height: 200px; color: white; background-color: black; font-size: 70px;" id="goalkickgame" class="game-btn">Free Kick Classic</button>
+    <button style="width: 400px;height: 200px; color: white; background-color: black; font-size: 70px;" id="infinitecraft" class="game-btn">Infinite Craft</button>
+    <button style="width: 400px;height: 200px; color: white; background-color: black; font-size: 70px;" id="funnyshooter2" class="game-btn">Funny Shooter 2</button>
+
+    <h2>Heres a game site thats unblocked via interstellar</h2>
+        <button style="width: 400px;height: 200px; color: white; background-color: black; font-size: 20px;" id="anothersite" class="game-btn">Forever Unblocked (NOT WORKING IM STILL MAKING IT LOLOLOLOLO) </button>
+
+    <h1>Interstellar un block er</h1>
     <iframe src="https://gointerstellar.app" style="width:100%;height:800px;border:0"></iframe>
 
+<h1>click here to open up Interstellar in a new tab:</h1>
+ <button style="width: 400px;height: 200px; color: white; background-color: black; font-size: 70px;" id="interstellar" class="game-btn">Interstellar</button>
 
-    <button id="openBtn" class="game-btn">1v1.lol</button>
-    <button id="goalkickgame" class="game-btn">Free Kick Classic</button>
-    <button id="infinitecraft" class="game-btn">Infinite Craft</button>
+  </main>
 
-
-    <h6>Why Social Studies Is Important
+  <footer>
+        <h6>Why Social Studies Is Important
 Social studies is one of the most important subjects taught in schools because it helps students understand the world they live in. It connects history, geography, economics, civics, and culture to teach people how societies function and how individuals can make a difference. Through social studies, students gain the knowledge and skills necessary to become informed, responsible, and active citizens.
 One major reason social studies is important is that it teaches us about the past. By learning history, students discover how societies have developed over time, what mistakes were made, and how they can be avoided in the future. Understanding historical events such as wars, revolutions, and social movements helps people see how change happens and how individuals and groups have shaped the world. History also gives students a sense of identity by connecting them to their heritage and traditions.
 Another important part of social studies is learning about geography. Geography helps us understand the relationship between people and the environment, including how natural resources, climate, and location influence human life. It also promotes global awareness—students learn about different countries, cultures, and perspectives. This understanding encourages empathy and respect for diversity, which are essential in todays interconnected world.
 Civics and government education, another part of social studies, teaches students how their political systems work. By studying laws, rights, and responsibilities, students become better prepared to participate in democracy. They learn how voting, civic engagement, and community service contribute to a healthy society. When young people understand how their government functions, they are more likely to be active and informed citizens who can make positive changes.
 Social studies also develops critical thinking and problem-solving skills. Students learn to analyze information, evaluate different viewpoints, and make evidence-based conclusions. These skills are valuable not only in school but also in real life—helping people understand current events, solve social problems, and make thoughtful decisions about their future.
 In conclusion, social studies is vital because it helps students understand the worlds past, present, and future. It teaches about history, geography, government, culture, and economics—all of which are necessary to build responsible, thoughtful, and informed citizens. Without social studies, people would lack the knowledge and perspective needed to work together and create a better world.
-</h6>
-  </main>
-
+        </h6>
+  </footer>
   <script>
   // ==== Panic Button Config ====
   const PANIC_KEY = 'p'; // key to press
-  const PANIC_URL = 'google.com'; // redirect destination
+  const PANIC_URL = 'gmail.com'; // redirect destination
 
   // Listen globally for the panic key
   document.addEventListener('keydown', e => {
@@ -142,6 +152,15 @@ In conclusion, social studies is vital because it helps students understand the 
   });
   document.getElementById('infinitecraft').addEventListener('click', () => {
     openInAboutBlank('https://kbhgames.com/game/infinite-craft');
+  });
+    document.getElementById('funnyshooter2').addEventListener('click', () => {
+    openInAboutBlank('https://html5.gamedistribution.com/a1b7ac4025214a5cb0bd01a4f675513a/');
+  });
+      document.getElementById('anothersite').addEventListener('click', () => {
+    openInAboutBlank('null');
+  });
+        document.getElementById('interstellar').addEventListener('click', () => {
+    openInAboutBlank('https://gointerstellar.app');
   });
   </script>
 </body>
